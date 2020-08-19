@@ -20,8 +20,10 @@ For more information have a look at our first [blog post](https://comsecuris.com
 
 Building
 ========
-
-Install regular QEMU dependencies + luajit, then:
+On Ubuntu ensure these packages are installed:
+```
+sudo apt install libluajit-5.1-dev python apt-get install build-essential zlib1g-dev pkg-config libglib2.0-dev binutils-dev libboost-all-dev autoconf libtool libssl-dev libpixman-1-dev libpython2-dev python-capstone virtualenv
+```
 
 ```
 git submodule update --init dtc

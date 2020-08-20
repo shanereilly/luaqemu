@@ -27,6 +27,6 @@ sudo apt install libluajit-5.1-dev python apt-get install build-essential zlib1g
 
 ```
 git submodule update --init dtc
-./configure  --enable-luajit --target-list=arm-softmmu
+./configure  --enable-luajit --target-list=arm-softmmu --disable-werror
 make
 ```

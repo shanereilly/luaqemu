@@ -187,12 +187,13 @@ bool enable_timestamp_msg;
  */
 void error_vreport(const char *fmt, va_list ap)
 {
-    GTimeVal tv;
+    GDateTime* tv;
     gchar *timestr;
 
     if (enable_timestamp_msg && !cur_mon) {
-        g_get_current_time(&tv);
-        timestr = g_time_val_to_iso8601(&tv);
+        tv = g_date_time_new_now_utc();
+        timestr = g_date_time_format_iso8601(tv);
+        g_date_time_unref(tv);
         error_printf("%s ", timestr);
         g_free(timestr);
     }
